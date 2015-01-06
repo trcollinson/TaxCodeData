@@ -3,9 +3,17 @@ DELIMITER //
 CREATE PROCEDURE `getTaxData`(tax_code varchar(12))
 BEGIN
 
+	SET @drop_if_exists = concat('DROP TABLE IF EXISTS ', tax_code);
+
+	PREPARE drop_table_statement FROM @drop_if_exists;
+
+	EXECUTE drop_table_statement;
+
+	DEALLOCATE PREPARE drop_table_statement;
+
 	SELECT @taxon := `Healthcare Provider Taxonomy_1` FROM npi WHERE `Healthcare Provider Taxonomy Code_1` = tax_code LIMIT 1;
 
-	SET @create_the_table = concat('CREATE TABLE  IF NOT EXISTS ',  tax_code, ' AS (SELECT `Provider Last Name (Legal Name)`, `Provider First Name`, `Provider Gender`, `Provider Business Practice Location Address Telephone Number`, `Provider Business Mailing Address Fax Number`, `Provider Business Practice Location Address Fax Number`, `Provider First Line Business Mailing Address`, `Provider Second Line Business Mailing Address`, `Provider Business Mailing Address City Name`, `Provider Business Mailing Address State Name`, `Provider Business Mailing Address Postal Code` FROM npi WHERE "', tax_code, '" IN( `Healthcare Provider Taxonomy Code_1`, `Healthcare Provider Taxonomy Code_2`, `Healthcare Provider Taxonomy Code_3`, `Healthcare Provider Taxonomy Code_4`, `Healthcare Provider Taxonomy Code_5`, `Healthcare Provider Taxonomy Code_6`, `Healthcare Provider Taxonomy Code_7`, `Healthcare Provider Taxonomy Code_8`, `Healthcare Provider Taxonomy Code_9`, `Healthcare Provider Taxonomy Code_10`, `Healthcare Provider Taxonomy Code_11`, `Healthcare Provider Taxonomy Code_12`, `Healthcare Provider Taxonomy Code_13`, `Healthcare Provider Taxonomy Code_14`, `Healthcare Provider Taxonomy Code_15` ) AND `Entity Type` = "Individual" AND `Provider Business Mailing Address Country Code` = "US")');
+	SET @create_the_table = concat('CREATE TABLE  IF NOT EXISTS ',  tax_code, ' AS (SELECT `Provider Last Name (Legal Name)`, `Provider First Name`, `Provider Gender`, `Provider Business Practice Location Address Telephone Number`, `Provider Business Mailing Address Telephone Number`, `Authorized Official Telephone Number`, `Provider First Line Business Mailing Address`, `Provider Second Line Business Mailing Address`, `Provider Business Mailing Address City Name`, `Provider Business Mailing Address State Name`, `Provider Business Mailing Address Postal Code` FROM npi WHERE "', tax_code, '" IN( `Healthcare Provider Taxonomy Code_1`, `Healthcare Provider Taxonomy Code_2`, `Healthcare Provider Taxonomy Code_3`, `Healthcare Provider Taxonomy Code_4`, `Healthcare Provider Taxonomy Code_5`, `Healthcare Provider Taxonomy Code_6`, `Healthcare Provider Taxonomy Code_7`, `Healthcare Provider Taxonomy Code_8`, `Healthcare Provider Taxonomy Code_9`, `Healthcare Provider Taxonomy Code_10`, `Healthcare Provider Taxonomy Code_11`, `Healthcare Provider Taxonomy Code_12`, `Healthcare Provider Taxonomy Code_13`, `Healthcare Provider Taxonomy Code_14`, `Healthcare Provider Taxonomy Code_15` ) AND `Entity Type` = "Individual" AND `Provider Business Mailing Address Country Code` = "US")');
 
 	PREPARE statement FROM @create_the_table;
 
@@ -37,7 +45,7 @@ BEGIN
 
 	DEALLOCATE PREPARE add_taxon_statement;
 
-	SET @save_file = concat('SELECT * FROM ', tax_code, ' INTO OUTFILE \'/Users/collinti/workspace/danny/', tax_code, '-', @taxon, '.csv\' FIELDS TERMINATED BY \',\' ENCLOSED BY \'"\' LINES TERMINATED BY \'\n\'');
+	SET @save_file = concat('SELECT * FROM ', tax_code, ' INTO OUTFILE \'/Users/collinti/workspace/TaxCodeData/', tax_code, '-', @taxon, '.csv\' FIELDS TERMINATED BY \',\' ENCLOSED BY \'"\' LINES TERMINATED BY \'\n\'');
 
 	PREPARE save_file_statement FROM @save_file;
 
