@@ -1,5 +1,7 @@
 DELIMITER //
 
+DROP PROCEDURE IF EXISTS `handleTaxCodes`;
+
 CREATE PROCEDURE `handleTaxCodes`()
 BEGIN
 

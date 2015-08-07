@@ -13,6 +13,14 @@ BEGIN
 
 	DEALLOCATE PREPARE drop_table_statement;
 
+	SET @drop_tablespace = concat('DROP TABLESPACE ', tax_code);
+
+	PREPARE drop_tablespace_statement FROM @drop_tablespace;
+
+	EXECUTE drop_tablespace_statement;
+
+	DEALLOCATE PREPARE drop_tablespace_statement;
+
 	SELECT @taxon := `Healthcare Provider Taxonomy_1` FROM npi WHERE `Healthcare Provider Taxonomy Code_1` = tax_code LIMIT 1;
 
 	SET @create_the_table = concat('CREATE TABLE  IF NOT EXISTS ',  tax_code, ' AS (SELECT `Provider Last Name (Legal Name)`, `Provider First Name`, `Provider Gender`, `Provider Business Practice Location Address Telephone Number`, `Provider Business Mailing Address Telephone Number`, `Authorized Official Telephone Number`, `Provider First Line Business Mailing Address`, `Provider Second Line Business Mailing Address`, `Provider Business Mailing Address City Name`, `Provider Business Mailing Address State Name`, `Provider Business Mailing Address Postal Code` FROM npi WHERE "', tax_code, '" IN( `Healthcare Provider Taxonomy Code_1`, `Healthcare Provider Taxonomy Code_2`, `Healthcare Provider Taxonomy Code_3`, `Healthcare Provider Taxonomy Code_4`, `Healthcare Provider Taxonomy Code_5`, `Healthcare Provider Taxonomy Code_6`, `Healthcare Provider Taxonomy Code_7`, `Healthcare Provider Taxonomy Code_8`, `Healthcare Provider Taxonomy Code_9`, `Healthcare Provider Taxonomy Code_10`, `Healthcare Provider Taxonomy Code_11`, `Healthcare Provider Taxonomy Code_12`, `Healthcare Provider Taxonomy Code_13`, `Healthcare Provider Taxonomy Code_14`, `Healthcare Provider Taxonomy Code_15` ) AND `Entity Type` = "Individual" AND `Provider Business Mailing Address Country Code` = "US")');

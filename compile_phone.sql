@@ -1,5 +1,7 @@
 DELIMITER //
 
+DROP PROCEDURE IF EXISTS `compilePhone`;
+
 CREATE PROCEDURE `compilePhone`(tax_code varchar(12))
 BEGIN
 

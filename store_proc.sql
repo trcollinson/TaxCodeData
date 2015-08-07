@@ -1,5 +1,7 @@
 DELIMITER //
 
+DROP PROCEDURE IF EXISTS `getTaxData`;
+
 CREATE PROCEDURE `getTaxData`(tax_code varchar(12))
 BEGIN
 
@@ -10,6 +12,14 @@ BEGIN
 	EXECUTE drop_table_statement;
 
 	DEALLOCATE PREPARE drop_table_statement;
+
+	SET @drop_tablespace = concat('DROP TABLESPACE ', tax_code);
+
+	PREPARE drop_tablespace_statement FROM @drop_tablespace;
+
+	EXECUTE drop_tablespace_statement;
+
+	DEALLOCATE PREPARE drop_tablespace_statement;
 
 	SELECT @taxon := `Healthcare Provider Taxonomy_1` FROM npi WHERE `Healthcare Provider Taxonomy Code_1` = tax_code LIMIT 1;
 

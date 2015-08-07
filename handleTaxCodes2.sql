@@ -5,6 +5,7 @@ DROP PROCEDURE IF EXISTS `handleTaxCodes`;
 CREATE PROCEDURE `handleTaxCodes`()
 BEGIN
 
+	/*
     CALL getTaxData("207K00000X");
     CALL getTaxData("207KA0200X");
     CALL getTaxData("207KI0005X");
@@ -92,7 +93,7 @@ BEGIN
     CALL getTaxData("207VX0000X");
     CALL getTaxData("207VE0102X");
     CALL getTaxData("207W00000X");
-    CALL getTaxData("204E00000X");
+    CALL getTaxData("204E00000X"); */
     CALL getTaxData("207X00000X");
     CALL getTaxData("207XS0114X");
     CALL getTaxData("207XX0004X");
@@ -310,7 +311,7 @@ BEGIN
     CALL compilePhone("207VX0000X");
     CALL compilePhone("207VE0102X");
     CALL compilePhone("207W00000X");
-    CALL compilePhone("204E00000X");
+   /* CALL compilePhone("204E00000X"); */
     CALL compilePhone("207X00000X");
     CALL compilePhone("207XS0114X");
     CALL compilePhone("207XX0004X");

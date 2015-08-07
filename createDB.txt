@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS npi_data;
+
+CREATE USER 'npi-user'@'localhost' IDENTIFIED BY '<password>';
+
+GRANT ALL on npi_data.* TO 'npi-user'@'localhost';
+
+mysql --user=npi-user --password npi_data
