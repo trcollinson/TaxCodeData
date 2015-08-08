@@ -1,0 +1,45 @@
+/* Remember to run with optional --local-infile command line option. */
+
+CREATE TABLE IF NOT EXISTS cell (cell_id INT NOT NULL AUTO_INCREMENT, cell_num varchar(20) NOT NULL, carrier varchar(20) NOT NULL, PRIMARY KEY (cell_id));
+
+LOAD DATA LOCAL INFILE 'phone1_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
+
+LOAD DATA LOCAL INFILE 'phone2_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
+
+LOAD DATA LOCAL INFILE 'phone3_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
+
+LOAD DATA LOCAL INFILE 'phone4_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
+
+LOAD DATA LOCAL INFILE 'phone5_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
+
+LOAD DATA LOCAL INFILE 'phone6_CLU.csv'
+INTO TABLE cell
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(cell_num, carrier);
