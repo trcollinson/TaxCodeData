@@ -23,4 +23,7 @@ There is only one usable set of addresses in the npi table. We create a table an
 
 Phone numbers can be in one of four categories: Business, Home, Cell, Unchecked. There were many complete duplicate entries (provider had the same number multiple times). These were deduplicated with no data loss. Following this, Business numbers were found by comparing numbers that were used by multiple providers. All other numbers were marked as unchecked. Script: updatePhoneForBusiness.sql
 
+Phone numbers are run through an api which returns a csv file with whether or not the number is a cellphone. These csv's need to be imported into a table for use. Script: createCell.sql. Note: This script must be run with --local-infile optional command line flag.
+
+Now that the cell csv's are imported the associated phone numbers must be updated within the phone table for best results. This is a simple join and update. Script: updatePhoneForHomeCell.sql
 
