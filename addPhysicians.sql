@@ -449,3 +449,13 @@ JOIN npi_phone b ON a.npi = b.npi
 JOIN phone c ON b.phone_id = c.phone_id
 SET a.phone_unchecked = c.phone_num
 WHERE c.phone_type = "Unchecked";
+
+INSERT INTO report_err (npi, lastname, firstname, suffix,
+    address_first, address_second, address_city, address_state, address_zip,
+    email, phone_bus, phone_home, phone_cell, phone_unchecked,
+    tax_category, tax_main, tax_secondary, tax_other)
+SELECT * FROM report GROUP BY npi HAVING count(*) > 1;
+
+DELETE FROM a
+USING report a INNER JOIN report_err b
+ON a.npi = b.npi;
