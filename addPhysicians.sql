@@ -459,3 +459,7 @@ SELECT * FROM report GROUP BY npi HAVING count(*) > 1;
 DELETE FROM a
 USING report a INNER JOIN report_err b
 ON a.npi = b.npi;
+
+SELECT * FROM report INTO OUTFILE 'Users/collinti/workspace/TaxCode/providers.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+
+SELECT * FROM report_err INTO OUTFILE 'Users/collinti/workspace/TaxCode/providers_err.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
