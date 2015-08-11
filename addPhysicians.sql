@@ -1,10 +1,8 @@
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Emergency Medicine"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Emergency Medicine"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207P00000X",
 "207PE0004X",
 "207PH0002X",
@@ -14,24 +12,20 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207PE0005X"
 );
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Allergy & Immunology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Allergy & Immunology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207K00000X",
 "207KA0200X",
 "207KI0005X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Anesthesiology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Anesthesiology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207L00000X",
 "207LA0401X",
 "207LC0200X",
@@ -39,13 +33,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207LP2900X",
 "207LP3000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "General Surgery"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "General Surgery"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208C00000X",
 "207T00000X",
 "204E00000X",
@@ -59,13 +51,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2086S0127X",
 "2086S0129X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Dermatology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Dermatology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207N00000X",
 "207NI0002X",
 "207ND0900X",
@@ -73,13 +63,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207NP0225X",
 "207NS0135X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Family Medicine"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Family Medicine"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207Q00000X",
 "207QA0401X",
 "207QA0000X",
@@ -90,40 +78,32 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207QS1201X",
 "207QS0010X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "General Practice"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "General Practice"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208D00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Hospitalist"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Hospitalist"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208M00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Medical Examiner"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Medical Examiner"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("202C00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Internal Medicine"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Internal Medicine"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207R00000X",
 "207RA0401X",
 "207RA0000X",
@@ -151,23 +131,19 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207RS0010X",
 "207RT0003X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Neurology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Neurology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("204D00000X",
 "204C00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Obstetrics & Gynecology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Obstetrics & Gynecology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207V00000X",
 "207VB0002X",
 "207VC0200X",
@@ -178,22 +154,18 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207VX0000X",
 "207VE0102X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Ophthalmology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Ophthalmology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207W00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Orthopaedic Surgery"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Orthopaedic Surgery"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207X00000X",
 "207XS0114X",
 "207XX0004X",
@@ -203,13 +175,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207XP3100X",
 "207XX0005X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Otolaryngology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Otolaryngology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207Y00000X",
 "207YS0123X",
 "207YX0602X",
@@ -219,13 +189,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207YX0007X",
 "207YS0012X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Pathology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Pathology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("207ZP0101X",
 "207ZP0102X",
 "207ZB0001X",
@@ -242,13 +210,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "207ZN0500X",
 "207ZP0213X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Pediatrics"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Pediatrics"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208000000X",
 "2080A0000X",
 "2080C0008X",
@@ -273,22 +239,18 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2080S0012X",
 "2080S0010X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Phlebology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Phlebology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("202K00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Physical Med & Rehab"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Physical Med & Rehab"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208100000X",
 "2081H0002X",
 "2081N0008X",
@@ -297,24 +259,20 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2081P0004X",
 "2081S0010X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Plastic Surgery"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Plastic Surgery"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208200000X",
 "2082S0099X",
 "2082S0105X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Preventative Medicine"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Preventative Medicine"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("2083A0100X",
 "2083T0002X",
 "2083X0100X",
@@ -323,13 +281,11 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2083S0010X",
 "2083P0011X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Psychiatry"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Psychiatry"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("2084A0401X",
 "2084P0802X",
 "2084B0002X",
@@ -350,23 +306,19 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2084S0010X",
 "2084V0102X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Pain Medicine"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Pain Medicine"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208VP0014X",
 "208VP0000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Radiology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Radiology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("2085B0100X",
 "2085D0003X",
 "2085R0202X",
@@ -380,33 +332,33 @@ SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_seco
 "2085R0203X",
 "2085R0204X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Thoratic Surgery"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Thoratic Surgery"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208G00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Transplant Surgery"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Transplant Surgery"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("204F00000X");
 
-INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, email, tax_category)
-SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, f.email, "Urology"
+INSERT INTO report (npi, lastname, firstname, suffix, address_first, address_second, address_city, address_state, address_zip, tax_category)
+SELECT a.npi, a.lastname, a.firstname, a.suffix, d.address_first, d.address_second, d.address_city, d.address_state, d.address_zip, "Urology"
     FROM provider a INNER JOIN npi_taxonomy b ON a.npi = b.npi
     INNER JOIN taxonomy c ON b.taxonomy_id = c.taxonomy_id
     INNER JOIN address d ON a.npi = d.npi
-    INNER JOIN npi_email e ON a.npi = e.npi
-    INNER JOIN email f ON e.email_id = f.email_id
     WHERE a.entity_type = "Individual" AND c.taxonomy_code IN ("208800000X",
 "2088P0231X");
+
+UPDATE report a
+JOIN npi_email b ON a.npi = b.npi
+JOIN email c ON b.email_id = c.email_id
+SET a.email = c.email
+WHERE c.email IS NOT NULL;
 
 UPDATE report a
 JOIN npi_taxonomy b ON a.npi = b.npi
@@ -450,16 +402,4 @@ JOIN phone c ON b.phone_id = c.phone_id
 SET a.phone_unchecked = c.phone_num
 WHERE c.phone_type = "Unchecked";
 
-INSERT INTO report_err (npi, lastname, firstname, suffix,
-    address_first, address_second, address_city, address_state, address_zip,
-    email, phone_bus, phone_home, phone_cell, phone_unchecked,
-    tax_category, tax_main, tax_secondary, tax_other)
-SELECT * FROM report GROUP BY npi HAVING count(*) > 1;
-
-DELETE FROM a
-USING report a INNER JOIN report_err b
-ON a.npi = b.npi;
-
-SELECT * FROM report INTO OUTFILE 'Users/collinti/workspace/TaxCode/providers.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
-
-SELECT * FROM report_err INTO OUTFILE 'Users/collinti/workspace/TaxCode/providers_err.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+SELECT * FROM report INTO OUTFILE '/Users/collinti/workspace/TaxCodeData/providers.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
